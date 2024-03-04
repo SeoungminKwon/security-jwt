@@ -21,7 +21,7 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .addFilterBefore(new MyFilter3(), BasicAuthenticationFilter.class)
+                .addFilterAfter(new MyFilter3(), BasicAuthenticationFilter.class)
                 .csrf(csrf ->
                         csrf.disable()
                 ).sessionManagement(
@@ -43,7 +43,7 @@ public class SecurityConfig {
                                         .requestMatchers("/api/v1/admin/**").hasRole("USER")
                                         .anyRequest().permitAll()
                 );
-        
+
         return http.build();
     }
 }
