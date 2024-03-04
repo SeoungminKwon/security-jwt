@@ -11,8 +11,8 @@ public class MyFilter1 implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
-        System.out.println("필터1");
-        filterChain.doFilter(servletRequest, servletResponse); // 이걸 안걸어주면 프로그램이 끝남 
 
+        System.out.println("필터1");
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 }
