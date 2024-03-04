@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class FilterConfig {
     //필터 체인에 거는 것이 아니라 새로운 필터를 만드는 방법
 
+    // 필터를 굳이 필터체인에 걸지 않고도 , FilterConfig로 필터를 등록 할 수 있다.
     @Bean
     public FilterRegistrationBean<MyFilter1> filter1() {
         FilterRegistrationBean<MyFilter1> bean = new FilterRegistrationBean<>(new MyFilter1());
